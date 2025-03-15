@@ -1,0 +1,66 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-simulado-heading" data-cy="SimuladoCreateUpdateHeading" jhiTranslate="caseApp.simulado.home.createOrEditLabel">
+        Criar ou editar Simulado
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        @if (editForm.controls.id.value !== null) {
+          <div class="mb-3">
+            <label class="form-label" for="field_id" jhiTranslate="caseApp.simulado.id">ID</label>
+            <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+          </div>
+        }
+
+        <div class="mb-3">
+          <label class="form-label" for="field_notaMat" jhiTranslate="caseApp.simulado.notaMat">Nota Mat</label>
+          <input type="number" class="form-control" name="notaMat" id="field_notaMat" data-cy="notaMat" formControlName="notaMat" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_notaPort" jhiTranslate="caseApp.simulado.notaPort">Nota Port</label>
+          <input type="number" class="form-control" name="notaPort" id="field_notaPort" data-cy="notaPort" formControlName="notaPort" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_notaLang" jhiTranslate="caseApp.simulado.notaLang">Nota Lang</label>
+          <input type="number" class="form-control" name="notaLang" id="field_notaLang" data-cy="notaLang" formControlName="notaLang" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_notaHum" jhiTranslate="caseApp.simulado.notaHum">Nota Hum</label>
+          <input type="number" class="form-control" name="notaHum" id="field_notaHum" data-cy="notaHum" formControlName="notaHum" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_aluno" jhiTranslate="caseApp.simulado.aluno">Aluno</label>
+          <select class="form-control" id="field_aluno" data-cy="aluno" name="aluno" formControlName="aluno" [compareWith]="compareAluno">
+            <option [ngValue]="null"></option>
+            @for (alunoOption of alunosSharedCollection; track $index) {
+              <option [ngValue]="alunoOption">{{ alunoOption.id }}</option>
+            }
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancelar</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Salvar</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

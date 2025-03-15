@@ -1,0 +1,54 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (simulado(); as simuladoRef) {
+      <div>
+        <h2 data-cy="simuladoDetailsHeading"><span jhiTranslate="caseApp.simulado.detail.title">Simulado</span></h2>
+
+        <hr />
+
+        <jhi-alert-error></jhi-alert-error>
+
+        <jhi-alert></jhi-alert>
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">Código</span></dt>
+          <dd>
+            <span>{{ simuladoRef.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="caseApp.simulado.notaMat">Nota Mat</span></dt>
+          <dd>
+            <span>{{ simuladoRef.notaMat }}</span>
+          </dd>
+          <dt><span jhiTranslate="caseApp.simulado.notaPort">Nota Port</span></dt>
+          <dd>
+            <span>{{ simuladoRef.notaPort }}</span>
+          </dd>
+          <dt><span jhiTranslate="caseApp.simulado.notaLang">Nota Lang</span></dt>
+          <dd>
+            <span>{{ simuladoRef.notaLang }}</span>
+          </dd>
+          <dt><span jhiTranslate="caseApp.simulado.notaHum">Nota Hum</span></dt>
+          <dd>
+            <span>{{ simuladoRef.notaHum }}</span>
+          </dd>
+          <dt><span jhiTranslate="caseApp.simulado.aluno">Aluno</span></dt>
+          <dd>
+            @if (simulado()!.aluno) {
+              <div>
+                <a [routerLink]="['/aluno', simulado()!.aluno?.id, 'view']">{{ simuladoRef.aluno?.id }}</a>
+              </div>
+            }
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Voltar</span>
+        </button>
+
+        <button type="button" [routerLink]="['/simulado', simuladoRef.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Editar</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

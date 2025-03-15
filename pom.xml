@@ -470,7 +470,7 @@
                     <version>${maven-failsafe-plugin.version}</version>
                     <configuration>
                         <!-- Due to spring-boot repackage, without adding this property test classes are not found
-                             See https://github.com/spring-projects/spring-boot/issues/6254 -->
+                        See https://github.com/spring-projects/spring-boot/issues/6254 -->
                         <!-- Force alphabetical order to have a reproducible build -->
                         <!-- Fix tests at java 13+ https://github.com/reactor/BlockHound/issues/33 -->
                         <classesDirectory>${project.build.outputDirectory}</classesDirectory>
@@ -830,7 +830,7 @@
                 <!-- default Spring profiles -->
                 <liquibase-plugin.password/>
                 <liquibase-plugin.url>jdbc:postgresql://localhost:5432/case</liquibase-plugin.url>
-                <liquibase-plugin.username>case</liquibase-plugin.username>
+                <liquibase-plugin.username>postgres</liquibase-plugin.username>
                 <profile.test>test,testdev</profile.test>
                 <spring.profiles.active>dev${profile.tls}${profile.no-liquibase}</spring.profiles.active>
             </properties>
