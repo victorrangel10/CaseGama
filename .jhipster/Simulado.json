@@ -1,0 +1,27 @@
+{
+  "annotations": {
+    "changelogDate": "20250315202622"
+  },
+  "applications": "*",
+  "fields": [
+    {
+      "fieldName": "notaMat",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "notaPort",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "notaLang",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "notaHum",
+      "fieldType": "Integer"
+    }
+  ],
+  "name": "Simulado",
+  "relationships": [],
+  "searchEngine": "no"
+}

@@ -1,0 +1,12 @@
+{
+  "caseApp": {
+    "AreaDoEnem": {
+      "null": "",
+      "LINGUAGENS": "LINGUAGENS",
+      "MATEMATICA": "MATEMATICA",
+      "CIENCIAS_HUMANAS": "CIENCIAS_HUMANAS",
+      "CIENCIAS_NATUREZA": "CIENCIAS_NATUREZA",
+      "REDACAO": "REDACAO"
+    }
+  }
+}

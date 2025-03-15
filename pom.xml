@@ -118,6 +118,10 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-oauth2-resource-server</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
         <dependency>
@@ -830,7 +834,7 @@
                 <!-- default Spring profiles -->
                 <liquibase-plugin.password/>
                 <liquibase-plugin.url>jdbc:postgresql://localhost:5432/case</liquibase-plugin.url>
-                <liquibase-plugin.username>case</liquibase-plugin.username>
+                <liquibase-plugin.username>postgres</liquibase-plugin.username>
                 <profile.test>test,testdev</profile.test>
                 <spring.profiles.active>dev${profile.tls}${profile.no-liquibase}</spring.profiles.active>
             </properties>
